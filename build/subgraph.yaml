@@ -1,0 +1,24 @@
+specVersion: 0.0.5
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Confessions
+    network: mumbai
+    source:
+      address: "0xDef94e2eaE1A10BaEE9421Bf53594096918Cc931"
+      abi: Confessions
+      startBlock: 33512102
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Confessed
+      abis:
+        - name: Confessions
+          file: Confessions\abis\Confessions.json
+      eventHandlers:
+        - event: Confessed(string,uint256)
+          handler: handleConfessed
+      file: Confessions\Confessions.wasm

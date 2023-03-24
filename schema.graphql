@@ -1,0 +1,6 @@
+type Confessed @entity(immutable: true) {
+  id: Bytes!
+  confession: String! # string
+  num: BigInt! #uint256
+  
+}
