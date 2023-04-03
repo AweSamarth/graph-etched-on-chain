@@ -7,6 +7,7 @@ export function handleConfessed(event: ConfessedEvent): void {
   )
   entity.confession = event.params.confession
   entity.num= event.params.num
+   
 
   entity.save()
 }
